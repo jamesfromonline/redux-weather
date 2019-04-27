@@ -18,6 +18,7 @@ export const weatherReducer = (state = initialState, action) => {
         ...state,
         showWeather: action.payload
       }
+      break
     default:
       return state
   }

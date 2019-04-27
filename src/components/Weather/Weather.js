@@ -30,14 +30,14 @@ class Weather extends Component {
     if (data.showWeather) {
       return (
         <div className='weather' style={backgroundStyle}>
-          <WeatherLocation submit={this.handleSubmit} />
+          <WeatherLocation show={data.showWeather} submit={this.handleSubmit} />
           <CurrentWeather data={data.currentWeather} />
         </div>
       )
     } else {
       return (
         <div className='weather' style={backgroundStyle}>
-          <WeatherLocation submit={this.handleSubmit} />
+          <WeatherLocation show={data.showWeather} submit={this.handleSubmit} />
         </div>
       )
     }
