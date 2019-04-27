@@ -1,7 +1,8 @@
-import { FETCH_WEATHER } from '../actions/types'
+import { FETCH_WEATHER, SHOW_WEATHER } from '../actions/types'
 
 const initialState = {
-  currentWeather: []
+  currentWeather: [],
+  showWeather: false
 }
 
 export const weatherReducer = (state = initialState, action) => {
@@ -12,6 +13,11 @@ export const weatherReducer = (state = initialState, action) => {
           currentWeather: action.payload
       }
       break
+    case SHOW_WEATHER:
+      return {
+        ...state,
+        showWeather: action.payload
+      }
     default:
       return state
   }
