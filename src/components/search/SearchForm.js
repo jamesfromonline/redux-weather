@@ -1,6 +1,8 @@
 import React from 'react'
+import {geolocated} from 'react-geolocated'
 
 const SearchForm = props => {
+  if(props.isGeolocationEnabled) console.log(props.coords)
   return (
     <form className={props.show ? 'search search--active' : 'search'}
           onSubmit={props.submit}>
@@ -17,4 +19,4 @@ const SearchForm = props => {
   )
 }
 
-export default SearchForm
+export default geolocated()(SearchForm)
