@@ -1,5 +1,5 @@
 import React from 'react'
-import Weather from './components/Weather/Weather'
+import Weather from './components/weather/Weather'
 import './App.scss'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
@@ -7,7 +7,7 @@ import { store } from './store/store'
 function App() {
   return (
     <Provider store={store}>
-      <div className="App">
+      <div className='app'>
         <Weather />
       </div>
     </Provider>

@@ -1,0 +1,57 @@
+.weather {
+  @include flex(column, center, center);
+  @include size(100%, 100vh);
+}
+
+.current-weather {
+  @include flex(row, center, center);
+  @include size(100%, 100%);
+
+  &__top-bar {
+    @include flex(row, space-between, flex-start);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  &__datetime {
+    margin-top: 7px;
+
+    p {
+      margin: 0;
+      padding: 3px 0;
+
+      &:first-child {
+        text-align: right;
+      }
+    }
+  }
+
+  &__icon {
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__temps {
+    @include flex(column, center, center);
+    @include size(190px, 190px);
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 200;
+    letter-spacing: -1px;
+    box-sizing: border-box;
+
+    span {
+      font-size: 0.85rem;
+      padding: 1px 0;
+    }
+  }
+}

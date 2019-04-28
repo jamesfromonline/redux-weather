@@ -1,0 +1,66 @@
+input {
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 6px 0 0 6px;
+  font-size: 1.4rem;
+  border: none;
+  background: white;
+  outline: 0;
+  color: $grey--light;
+}
+
+button {
+  padding: 13px;
+  background: white;
+  border-radius: 0 6px 6px 0;
+  font-size: 1.45rem;
+  border: none;
+  outline: 0;
+  cursor: pointer;
+  background: $white--solid;
+  transition: all 0.3s ease;
+
+  &:focus,
+  &:hover {
+    background: $blue;
+  }
+}
+
+.search {
+  @include flex(row, center, center);
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  transition: all 0.5s ease;
+  z-index: 1;
+
+  &--active {
+    top: 0;
+    transform: scale(0.7);
+
+    input {
+      background: $white--translucent;
+      transition: all 0.3s ease;
+
+      &:focus {
+        background: $white--solid;
+
+        & ~ button {
+          background: $white--solid;
+        }
+      }
+    }
+
+    button {
+      padding: 13px;
+      background: $white--translucent;
+      box-shadow: none;
+      font-size: 1.45rem;
+
+      &:focus,
+      &:hover {
+        background: $white--solid;
+      }
+    }
+  }
+}

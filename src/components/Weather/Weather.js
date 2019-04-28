@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { fetchWeather, toggleWeather } from '../../actions/weatherActions'
 import { getBackgroundColor } from '../../actions/backgroundActions'
-import WeatherLocation from './WeatherLocation'
+import SearchForm from '../search/SearchForm'
 import CurrentWeather from './CurrentWeather'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
@@ -21,24 +21,25 @@ class Weather extends Component {
     this.props.getBackgroundColor()
   }
 
-
   render() {
-    const data = this.props.weather
-    const backgroundStyle = {
-      background: this.props.background.backgroundColor
-    }
+    const data = this.props.weather,
+          backgroundStyle = {
+            background: this.props.background.backgroundColor
+          }
     if (data.showWeather) {
       return (
-        <div className='weather' style={backgroundStyle}>
-          <WeatherLocation show={data.showWeather} submit={this.handleSubmit} />
+        <main className='weather' style={backgroundStyle}>
+          <SearchForm show={data.showWeather}
+                      submit={this.handleSubmit} />
           <CurrentWeather data={data.currentWeather} />
-        </div>
+        </main>
       )
     } else {
       return (
-        <div className='weather' style={backgroundStyle}>
-          <WeatherLocation show={data.showWeather} submit={this.handleSubmit} />
-        </div>
+        <main className='weather' style={backgroundStyle}>
+          <SearchForm show={data.showWeather}
+                      submit={this.handleSubmit} />
+        </main>
       )
     }
   }
