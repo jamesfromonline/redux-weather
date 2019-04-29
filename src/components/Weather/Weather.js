@@ -30,18 +30,22 @@ class Weather extends Component {
     if (data.showWeather) {
       return (
         <main className='weather' style={backgroundStyle}>
-          <SearchForm show={data.showWeather}
-                      submit={this.handleSubmit} />
-          <CurrentWeather data={data.currentWeather} />
+          <div className='weather__wrapper'>
+            <SearchForm show={data.showWeather}
+                        submit={this.handleSubmit} />
+            <CurrentWeather data={data.currentWeather} />
+          </div>
         </main>
       )
     } else {
       return (
         <main className='weather' style={backgroundStyle}>
-          <SearchForm show={data.showWeather}
-                      fetchWeather={this.props.fetchWeather}
-                      toggleWeather={this.props.toggleWeather}
-                      submit={this.handleSubmit} />
+          <div className='weather__wrapper'>
+            <SearchForm show={data.showWeather}
+                        fetchWeather={this.props.fetchWeather}
+                        toggleWeather={this.props.toggleWeather}
+                        submit={this.handleSubmit} />
+          </div>
         </main>
       )
     }

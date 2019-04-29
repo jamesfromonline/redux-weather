@@ -32,22 +32,36 @@ const CurrentWeather = props => {
             <p>
               Humidity
             </p>
-            {current.humidity}%
+            <div className='bottom-bar__main-item'>
+              {current.humidity}%
+            </div>
           </li>
           <li className='bottom-bar__item'>
             <p>
               Feels Like
             </p>
-            {current.feelslike_f}˚F
-            <span>
-              {current.feelslike_c}˚C
-            </span>
+            <div className='bottom-bar__main-item'>
+              {current.feelslike_f}˚F
+              <span>
+                {current.feelslike_c}˚C
+              </span>
+            </div>
+          </li>
+          <li className='bottom-bar__item'>
+            <p>
+              Wind
+            </p>
+            <div className='bottom-bar__main-item'>
+              {current.wind_mph}mph
+            </div>
           </li>
           <li className='bottom-bar__item'>
             <p>
               UV Index
             </p>
-            {current.uv}
+            <div className='bottom-bar__main-item'>
+              {current.uv}
+            </div>
           </li>
         </ul>
       </section>
