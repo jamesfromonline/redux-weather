@@ -15,6 +15,7 @@
   @include size(100%, 100%);
 
   h2 {
+    margin-top: 0;
     font-weight: 200;
   }
 
@@ -72,6 +73,7 @@
   bottom: 0;
   @include flex(row, center, center);
   width: 100%;
+  max-width: 1000px;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -80,7 +82,7 @@
     @include flex(column, flex-start, center);
     width: 25%;
     min-height: 100px;
-    padding: 20px;
+    padding: 20px 0;
 
     p {
       margin: 0;
@@ -90,5 +92,11 @@
   &__main-item {
     @include flex(column, center, center);
     flex: 1;
+    font-size: 1.5rem;
+    font-weight: 300;
+
+    span {
+      font-size: 0.85rem;
+    }
   }
 }

@@ -10,10 +10,11 @@ input {
 }
 
 button {
-  padding: 13px;
+  padding: 11px;
   background: white;
+  margin: 0;
   border-radius: 0 6px 6px 0;
-  font-size: 1.45rem;
+  font-size: 1.67rem;
   border: none;
   outline: 0;
   cursor: pointer;
@@ -27,12 +28,25 @@ button {
 }
 
 .search {
-  @include flex(row, center, center);
+  @include flex(column, center, center);
   position: absolute;
   top: 40%;
   width: 100%;
   transition: all 0.5s ease;
   z-index: 1;
+
+  &__input-container {
+    @include flex(row, center, center);
+  }
+
+  &__title {
+    opacity: 1;
+    transition: all 0.3s ease;
+
+    &--active {
+      opacity: 0;
+    }
+  }
 
   &--active {
     top: 0;

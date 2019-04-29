@@ -5,7 +5,6 @@ const initialState = {
 }
 
 export const backgroundReducer = (state = initialState, action) => {
-  console.log('running background reducer')
   switch(action.type) {
     case GET_BACKGROUND:
       return {

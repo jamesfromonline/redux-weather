@@ -42,9 +42,6 @@ const CurrentWeather = props => {
             </p>
             <div className='bottom-bar__main-item'>
               {current.feelslike_f}˚F
-              <span>
-                {current.feelslike_c}˚C
-              </span>
             </div>
           </li>
           <li className='bottom-bar__item'>
