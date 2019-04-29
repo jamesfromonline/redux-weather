@@ -26,6 +26,7 @@ class Weather extends Component {
           backgroundStyle = {
             background: this.props.background.backgroundColor
           }
+
     if (data.showWeather) {
       return (
         <main className='weather' style={backgroundStyle}>
@@ -38,6 +39,8 @@ class Weather extends Component {
       return (
         <main className='weather' style={backgroundStyle}>
           <SearchForm show={data.showWeather}
+                      fetchWeather={this.props.fetchWeather}
+                      toggleWeather={this.props.toggleWeather}
                       submit={this.handleSubmit} />
         </main>
       )

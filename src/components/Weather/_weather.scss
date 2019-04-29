@@ -4,8 +4,12 @@
 }
 
 .current-weather {
-  @include flex(row, center, center);
+  @include flex(column, center, center);
   @include size(100%, 100%);
+
+  h2 {
+    font-weight: 200;
+  }
 
   &__top-bar {
     @include flex(row, space-between, flex-start);
@@ -54,4 +58,8 @@
       padding: 1px 0;
     }
   }
+}
+
+.bottom-bar {
+  list-style: none;
 }

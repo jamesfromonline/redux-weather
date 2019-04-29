@@ -18,12 +18,38 @@ const CurrentWeather = props => {
             <p>{moment.unix(location.localtime_epoch).format('LL')}</p>
           </div>
         </div>
+        <h2>
+          {location.name}
+        </h2>
         <div className='current-weather__temps'>
           {current.temp_f}˚F
           <span>
             {current.temp_c}˚C
           </span>
         </div>
+        <ul className='bottom-bar'>
+          <li className='bottom-bar__item'>
+            <p>
+              Humidity
+            </p>
+            {current.humidity}%
+          </li>
+          <li className='bottom-bar__item'>
+            <p>
+              Feels Like
+            </p>
+            {current.feelslike_f}˚F
+            <span>
+              {current.feelslike_c}˚C
+            </span>
+          </li>
+          <li className='bottom-bar__item'>
+            <p>
+              UV Index
+            </p>
+            {current.uv}
+          </li>
+        </ul>
       </section>
     )
   } else {
