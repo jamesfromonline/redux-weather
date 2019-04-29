@@ -11,21 +11,21 @@ class SearchForm extends Component {
     }
     return null
   }
+
   render() {
     return (
       <form className={this.props.show ? 'search search--active' : 'search'}
             onSubmit={this.props.submit}>
-        <div className='search__input-container'>
-          <input type='text'
-                 name='location'
-                 placeholder='city, zip, coordinates, etc...'
-                 onSubmit={e => e.preventDefault()} />
-          <button type='submit'>
-            <span role='image' aria-label='Submit your location'>
-              👉
-            </span>
-          </button>
-        </div>
+        <input type='text'
+               name='location'
+               className='search__input'
+               placeholder='city, zip, coordinates, etc...'
+               onSubmit={e => e.preventDefault()} />
+        <button className='search__btn' type='submit'>
+          <span role='image' aria-label='Submit your location'>
+            👉
+          </span>
+        </button>
       </form>
     )
   }

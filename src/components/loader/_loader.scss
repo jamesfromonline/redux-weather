@@ -1,33 +1,30 @@
 .loader {
-  bottom: 0;
-  height: 175px;
-  left: 0;
-  margin: auto;
   position: absolute;
   right: 0;
   top: 0;
-  width: 175px;
+  left: 0;
+  bottom: 0;
+  @include size(175px, 175px);
+  margin: auto;
 
   &__dot {
-    bottom: 0;
-    height: 100%;
-    left: 0;
-    margin: auto;
     position: absolute;
     right: 0;
     top: 0;
-    width: 87.5px;
+    left: 0;
+    bottom: 0;
+    @include size(87.5px, 100%);
+    margin: auto;
 
     &::before {
-      border-radius: 100%;
-      content: "";
-      height: 87.5px;
-      left: 0;
       position: absolute;
+      left: 0;
       right: 0;
       top: 0;
+      @include size(87.5px, 87.5px);
+      content: '';
+      border-radius: 100%;
       transform: scale(0);
-      width: 87.5px;
     }
 
     &:nth-child(7n+1) {
@@ -105,7 +102,7 @@
   right: 0;
   bottom: -40px;
   @include size(180px, 20px);
-  background-image: url("");
+  background-image: url('/');
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }

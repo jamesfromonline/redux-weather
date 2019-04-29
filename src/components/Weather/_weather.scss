@@ -1,12 +1,15 @@
+@import './components/top-bar/top-bar';
+@import './components/bottom-bar/bottom-bar';
+@import './components/temperature/temperature';
+
 .weather {
   @include flex(column, center, center);
   @include size(100%, 100vh);
 
   &__wrapper {
     @include flex(column, center, center);
+    @include size(100%, 100%);
     max-width: 1000px;
-    width: 100%;
-    height: 100%;
   }
 }
 
@@ -17,86 +20,5 @@
   h2 {
     margin-top: 0;
     font-weight: 200;
-  }
-
-  &__top-bar {
-    @include flex(row, space-between, flex-start);
-    position: absolute;
-    top: 0;
-    width: 100%;
-    max-width: 1000px;
-    padding: 0 10px;
-    box-sizing: border-box;
-  }
-
-  &__datetime {
-    margin-top: 7px;
-
-    p {
-      margin: 0;
-      padding: 3px 0;
-
-      &:first-child {
-        text-align: right;
-      }
-    }
-  }
-
-  &__icon {
-
-    p {
-      margin: 0;
-    }
-  }
-
-  &__temps {
-    @include flex(column, center, center);
-    @include size(190px, 190px);
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 50%;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 200;
-    letter-spacing: -1px;
-    box-sizing: border-box;
-
-    span {
-      font-size: 0.85rem;
-      padding: 1px 0;
-    }
-  }
-}
-
-.bottom-bar {
-  position: absolute;
-  bottom: 0;
-  @include flex(row, center, center);
-  width: 100%;
-  max-width: 1000px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  &__item {
-    @include flex(column, flex-start, center);
-    width: 25%;
-    min-height: 100px;
-    padding: 20px 0;
-
-    p {
-      margin: 0;
-    }
-  }
-
-  &__main-item {
-    @include flex(column, center, center);
-    flex: 1;
-    font-size: 1.5rem;
-    font-weight: 300;
-
-    span {
-      font-size: 0.85rem;
-    }
   }
 }

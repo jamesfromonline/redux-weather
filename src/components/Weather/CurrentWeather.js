@@ -1,6 +1,8 @@
 import React from 'react'
-import moment from 'moment'
 import Loader from '../loader/Loader'
+import BottomBar from './components/bottom-bar/BottomBar'
+import TopBar from './components/top-bar/TopBar'
+import Temperature from './components/temperature/Temperature'
 
 const CurrentWeather = props => {
   const current = props.data.current,
@@ -8,59 +10,12 @@ const CurrentWeather = props => {
   if (current && location) {
     return (
       <section className='current-weather animate__fade-in'>
-        <div className='current-weather__top-bar'>
-          <div className='current-weather_icon'>
-            <img src={`http:${current.condition.icon}`}
-                 alt={current.condition.text} />
-          </div>
-          <div className='current-weather__datetime'>
-            <p>{moment.unix(location.localtime_epoch).format('h:mmA')}</p>
-            <p>{moment.unix(location.localtime_epoch).format('LL')}</p>
-          </div>
-        </div>
+        <TopBar current={current} location={location} />
         <h2>
           {location.name}
         </h2>
-        <div className='current-weather__temps'>
-          {current.temp_f}˚F
-          <span>
-            {current.temp_c}˚C
-          </span>
-        </div>
-        <ul className='bottom-bar'>
-          <li className='bottom-bar__item'>
-            <p>
-              Humidity
-            </p>
-            <div className='bottom-bar__main-item'>
-              {current.humidity}%
-            </div>
-          </li>
-          <li className='bottom-bar__item'>
-            <p>
-              Feels Like
-            </p>
-            <div className='bottom-bar__main-item'>
-              {current.feelslike_f}˚F
-            </div>
-          </li>
-          <li className='bottom-bar__item'>
-            <p>
-              Wind
-            </p>
-            <div className='bottom-bar__main-item'>
-              {current.wind_mph}mph
-            </div>
-          </li>
-          <li className='bottom-bar__item'>
-            <p>
-              UV Index
-            </p>
-            <div className='bottom-bar__main-item'>
-              {current.uv}
-            </div>
-          </li>
-        </ul>
+        <Temperature current={current} />
+        <BottomBar current={current} />
       </section>
     )
   } else {

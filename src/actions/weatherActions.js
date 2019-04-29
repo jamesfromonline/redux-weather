@@ -15,7 +15,6 @@ export const fetchWeather = location => async dispatch => {
     //   type: WEATHER_ERROR
     // })
 
-    console.log(json)
   } catch(e) {
     console.error('error damn: ', e)
   }

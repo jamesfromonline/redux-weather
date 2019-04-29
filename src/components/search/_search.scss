@@ -1,50 +1,37 @@
-input {
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 6px 0 0 6px;
-  font-size: 1.4rem;
-  border: none;
-  background: white;
-  outline: 0;
-  color: $grey--light;
-}
-
-button {
-  padding: 11px;
-  background: white;
-  margin: 0;
-  border-radius: 0 6px 6px 0;
-  font-size: 1.67rem;
-  border: none;
-  outline: 0;
-  cursor: pointer;
-  background: $white--solid;
-  transition: all 0.3s ease;
-
-  &:focus,
-  &:hover {
-    background: $blue;
-  }
-}
-
 .search {
-  @include flex(column, center, center);
+  @include flex(row, center, center);
   position: absolute;
   top: 40%;
   width: 100%;
   transition: all 0.5s ease;
   z-index: 1;
 
-  &__input-container {
-    @include flex(row, center, center);
+  &__input {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 6px 0 0 6px;
+    font-size: 1.4rem;
+    border: none;
+    background: white;
+    outline: 0;
+    color: $grey--light;
   }
 
-  &__title {
-    opacity: 1;
+  &__btn {
+    padding: 11px;
+    margin: 0;
+    border-radius: 0 6px 6px 0;
+    border: none;
+    outline: 0;
+    background: white;
+    background: $white--solid;
+    font-size: 1.67rem;
+    cursor: pointer;
     transition: all 0.3s ease;
 
-    &--active {
-      opacity: 0;
+    &:focus,
+    &:hover {
+      background: $blue;
     }
   }
 
@@ -52,20 +39,20 @@ button {
     top: 0;
     transform: scale(0.7);
 
-    input {
+    .search__input {
       background: $white--translucent;
       transition: all 0.3s ease;
 
       &:focus {
         background: $white--solid;
 
-        & ~ button {
+        & ~ .search__btn {
           background: $white--solid;
         }
       }
     }
 
-    button {
+    .search__btn {
       padding: 13px;
       background: $white--translucent;
       box-shadow: none;
