@@ -1,5 +1,5 @@
 import React from 'react'
-import Weather from './components/weather/Weather'
+import Weather from './components/Weather/Weather.js'
 import Div100vh from 'react-div-100vh'
 import { Provider } from 'react-redux'
 import { store } from './store/store'
