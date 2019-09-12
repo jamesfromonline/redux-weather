@@ -1,7 +1,7 @@
 import { FETCH_WEATHER, SHOW_WEATHER } from './types'
 
 export const fetchWeather = location => async dispatch => {
-  const url = `http://api.apixu.com/v1/current.json?key=197520bf96ea4741875202422192604&q=${location}`
+  const url = `https://api.apixu.com/v1/current.json?key=197520bf96ea4741875202422192604&q=${location}`
   try {
     const data = await fetch(url)
     const json = await data.json()
